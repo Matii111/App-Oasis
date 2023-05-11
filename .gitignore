@@ -1,0 +1,14 @@
+/.dart_tool
+/.idea
+/android
+/build
+/ios
+/linux
+/macos
+/web
+/windows
+/.metadata
+/analysis_options.yaml
+/flutter_application_1.iml
+/pubspec.lock
+/test
