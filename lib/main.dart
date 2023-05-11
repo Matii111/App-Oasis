@@ -6,72 +6,82 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Oasis demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 4, 55, 66)),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: Color.fromRGBO(1, 100, 103, 1)),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'OASIS'),
+      home: const MyHomePage(title: ''),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
   final String title;
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  final ButtonStyle myButtonStyle = ButtonStyle(
+    shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(2))),
+    backgroundColor: MaterialStateProperty.all<Color>(const Color.fromRGBO(1, 100, 103, 1)),
+    foregroundColor: MaterialStateProperty.all<Color>(const Color.fromARGB(255, 255, 255, 255)),
+    elevation: MaterialStateProperty.all<double>(8),
+    padding: MaterialStateProperty.all<EdgeInsetsGeometry>(const EdgeInsets.symmetric(vertical: 10, horizontal: 60),    
+  ),   
+);
 
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
         title: Text(widget.title),
       ),
-      body: Center(        
+      body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[     
-            Image.asset(
-              'assets/imgs/estandarte_oasis.png',
-              ),
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+        children: [
+          Image.asset(
+            'assets/imgs/logo_oasis.png',
+            width: 200,
+            height: 200,
+          ),
+         ElevatedButton(
+          onPressed: () {
+            // Acción del tercer botón
+          },
+          style: myButtonStyle,
+          child: const Text('     ESTADO DE SALUD     '),
         ),
+        const SizedBox(height: 8), 
+         ElevatedButton(
+          onPressed: () {
+            // Acción del tercer botón
+          },
+          style: myButtonStyle,
+          child: const Text('LISTADO DE EJERCICIOS'),
+        ),
+        const SizedBox(height: 8), 
+         ElevatedButton(
+          onPressed: () {
+            // Acción del tercer botón
+          },          
+          style: myButtonStyle,
+          child: const Text('           ASISTENCIA           '),
+        ),
+        ],
+      )
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      
     );
   }
 }
+
 /* A Flutter implementation of the last frame of the splashscreen animation */
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -95,7 +105,8 @@ class CustomAppBar extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.only(top: 3),
           child: Text("Super Splash Screen Demo",
-              style: TextStyle(color: Color.fromARGB(137, 255, 0, 0), fontSize: 24)),
+              style: TextStyle(
+                  color: Color.fromRGBO(1, 99, 103, 0), fontSize: 24)),
         ),
       ],
     );
