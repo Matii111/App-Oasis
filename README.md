@@ -24,7 +24,14 @@ Por otro lado, el resto de las carpetas son las mínimas requeridas para ejecuta
 
 - Dispositivo de pruebas: Para esto se utilizo [Android Studio](https://developer.android.com/studio) para emular los dispositivos pertinentes. En primera instancia fue específicamente un **Pixel 5**, con sistema operativo **Android 13.0**. 
 
- 
+## Demo
+A continuación, capturas de la aplicación dentro del dispositivo móvil.
+
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/Matii111/App-Oasis/main/assets/imgs/test2.png" width="400">
+     <img src="https://raw.githubusercontent.com/Matii111/App-Oasis/main/assets/imgs/test1.png" width="400">
+</p>
 
 <br>
 <br>
